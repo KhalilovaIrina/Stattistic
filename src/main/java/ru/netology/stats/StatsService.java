@@ -31,19 +31,12 @@ public class StatsService {
     }
 
     public long averageSummarySales(int[] sales) {
-        long sum = 0;
-        for (long s : sales) {
-            sum = sum + s;
-        }
+        long sum = summarySales(sales);
         return sum / 12;
     }
 
     public long belowTheAverage(int[] sales) {
-        long sum = 0;
-        for (long s : sales) {
-            sum = sum + s;
-        }
-        long averageSum = sum / 12;
+        long averageSum = averageSummarySales(sales);
         int count = 0;
         for (long num : sales) {
             if (num < averageSum) {
@@ -54,11 +47,7 @@ public class StatsService {
     }
 
     public long aboveTheAverage(int[] sales) {
-        long sum = 0;
-        for (long s : sales) {
-            sum = sum + s;
-        }
-        long averageSum = sum / 12;
+        long averageSum = averageSummarySales(sales);
         int count = 0;
         for (long num : sales) {
             if (num > averageSum) {
